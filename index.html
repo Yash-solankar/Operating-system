@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MetaData</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <div class="logo">MetaData</div>
+    <div class="buttons">
+      <button class="btn btn-login" onclick="openLogin()">
+        <i class="fa-solid fa-arrow-right-to-bracket login-icon"></i>Log in
+      </button>
+      <button class="btn btn-signin" onclick="openSignin()">Sign Up</button>
+    </div>
+
+    <!-- Login Panel -->
+    <div id="loginpanel" class="login-panel">
+      <button class="close-btn" onclick="closeLogin()">X</button>
+      <h2>Log In</h2>
+      <div class="center">
+        <button class="google"><img src="google-logo.png" alt="google"> Continue with Google</button>
+        <button class="google"><img src="microsoft-logo.png" alt="microsoft"> Continue with Microsoft</button>
+        <button class="google"><img src="apple-logo.png" alt="apple"> Continue with Apple</button>
+      </div>
+      <p>or</p>
+      <div class="center">
+        <div class="input-group">
+          <span class="input-icon"><i class="fa-solid fa-envelope"></i></span>
+          <input type="email" placeholder="E-Mail or Username">
+        </div>
+        <div class="input-group">
+          <span class="input-icon"><i class="fa-solid fa-lock"></i></span>
+          <input type="password" placeholder="Password">
+          <span class="toggle-password"><i class="fa-solid fa-eye"></i></span>
+        </div>
+        <button class="submit-btn">LOG IN<i class="fa-solid fa-arrow-right-to-bracket login-page"></i></button>
+        <div class="text-center">Having trouble? <a href="">Get help</a></div>
+        <div class="forgot-center"><a href="">Forgot your password?</a></div>
+        <div class="divider"></div>
+        <p id="account">Don't have an account yet? <a href="#" id="openSignup">Sign Up</a></p>
+      </div>
+    </div>
+
+    <!-- Signin Panel -->
+    <div id="signinpanel" class="signin-panel">
+      <button class="close-btn" onclick="closeSignin()">X</button>
+      <h2>Create your account</h2>
+      <div class="center">
+        <button class="google"><img src="google-logo.png" alt="google"> Sign up with Google</button>
+        <button class="google"><img src="microsoft-logo.png" alt="microsoft"> Sign up with Microsoft</button>
+        <button class="google"><img src="apple-logo.png" alt="apple"> Sign up with Apple</button>
+      </div>
+      <p>Or sign up using your e-mail address:</p>
+      <div class="center">
+        <div class="input-group">
+          <span class="input-icon"><i class="fa-solid fa-envelope"></i></span>
+          <input type="email" placeholder="E-Mail">
+        </div>
+        <div class="input-group">
+          <span class="input-icon"><i class="fa-solid fa-lock"></i></span>
+          <input type="password" placeholder="Password">
+          <span class="toggle-password"><i class="fa-solid fa-eye"></i></span>
+        </div>
+        <div class="Privacy-policy-box">
+          <input type="checkbox" id="policy">
+          <label for="policy">
+            I accept the <a href="#">Terms of Use</a> and the <a href="#">Privacy Policy</a>
+          </label>
+        </div>
+        <button class="submit-btn">SIGN UP<i class="fa-solid fa-user-plus login-page"></i></button>
+        <div class="text-center">Having trouble? <a href="">Get help</a></div>
+        <div class="divider"></div>
+        <p id="account">Already have an account? <a href="#" id="openLogin">Log in</a></p>
+      </div>
+    </div>
+  </header>
+
+  <div id="overlay" class="overlay"></div>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Get All Metadata Info Of <br>Your Images</h1>
+      <p>Online & For Free - No Registration, No Installation</p>
+    </div>
+    <div class="hero-image">
+      <img src="banner_image.svg" alt="banner">
+    </div>
+  </section>
+
+  <main>
+    <div class="exif-container">
+      <div class="exif-left">
+        <h2>Online EXIF data viewer</h2>
+        <p>Uncover hidden metadata from your photos. Find when and where the picture was taken. <a href="#">Remove EXIF
+            data</a> from the image to protect your personal info.</p>
+      </div>
+
+      <div class="exif-right">
+        <label style="cursor:pointer;">
+          <div class="upload-box" id="uploadBox">
+            <i class="fa-solid fa-cloud-arrow-up" id="icon"></i>
+            <p id="text"><strong>Click to upload an image</strong></p>
+            <p class="note">Up to 50 MB. Your uploads are private.<br>
+              <span class="warn">All photos are deleted after 24 hours!</span>
+            </p>
+            <input type="file" name="image" accept="image/*" id="fileInput">
+          </div>
+        </label>
+
+        <button id="showExifBtn">Go for EXIF Remover</button>
+
+        <!-- Table container hidden by default -->
+        <div id="exifTableContainer" class="exif-table-box"></div>
+      </div>
+    </div>
+  </main>
+
+  <section class="exifdata-container">
+    <h2>How to view EXIF metadata from your photos</h2>
+    <div class="exif-card">
+      <div class="card space1">
+        <p class="number">1</p>
+        <h4>Upload a photo</h4>
+        <p class="info">Upload any photo to MetaData EXIF Viewer. We'll read its metadata and show what's inside.</p>
+      </div>
+      <div class="card">
+        <p class="number">2</p>
+        <h4>View the metadata</h4>
+        <p class="info">View EXIF metadata recorded in the photo. Data, time, camera settings, geolocation coordinates,
+          and many more.</p>
+      </div>
+      <div class="card space3">
+        <p class="number">3</p>
+        <h4>Removes the metadata</h4>
+        <p class="info">Download the photo with EXIF data removed. It's good to protect your privacy and reduce the
+          photo file size.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-about">
+        <h3>MetaData EXIF Viewer</h3>
+        <p>View, analyze, and remove metadata from your photos. Protect your privacy and keep your files lightweight.
+        </p>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Upload</a></li>
+          <li><a href="#">How it Works</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <p>Email: <a href="mailto:support@metadata.com">support@metadata.com</a></p>
+        <p>© 2025 MetaData EXIF Viewer</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/exif-js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
