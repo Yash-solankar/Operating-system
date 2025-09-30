@@ -470,7 +470,7 @@ main{
     background: #fff;
     margin: 5px 0;
     overflow: hidden;
-    width: 300px; /* adjust width as needed */
+    width: 300px; 
 }
 
 .input-group .input-icon,
@@ -496,7 +496,7 @@ main{
     color: #888;
 }
 
-/* Hover & focus effects */
+
 .input-group:focus-within {
     border-color: #007bff;
 }
@@ -569,44 +569,47 @@ main{
 }
 
 /* EXIF Table Styling */
-.exif-table-box {
+
+#exifTableContainer{
+    display: none;
+}
+
+#exifTableContainer {
     width: 100%;
-    max-height: 400px; /* Fit screen */
-    overflow-y: auto;
-    margin-top: 20px;
-    border: 1px solid #00a896;
-    border-radius: 6px;
-    padding: 10px;
-    background-color: #f9f9f9;
+    margin: 20px auto;
+    padding: 0 50px;
+    box-sizing: border-box;
 }
 
-.exif-table-box table {
+#exifTableContainer table {
     width: 100%;
-    border-collapse: collapse;
 }
 
-.exif-table-box th,
-.exif-table-box td {
-    border: 1px solid #00a896;
-    padding: 6px 8px;
-    text-align: left;
-    max-width: 200px; /* Limit width */
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis; /* Truncate long value */
-}
-
-.exif-table-box th {
-    background-color: #00a896;
-    color: white;
+/* Center only the paragraph (no data message) */
+#exifTableContainer p {
+    text-align: center;
+    display: block;
+    margin: 40px auto;
+    font-size: 18px;
+    color: #666;
+    width: 100%;
 }
 
 #showExifBtn{
+    font-weight: 500;
     margin-top:15px;
     display:none;
     padding: 5px;
     border-radius: 5px;
     border: 1px solid green;
+    color: green;
+    background-color: white;
+    transition: transform 0.3s ease;
+}
+
+#showExifBtn:hover{
     color: white;
     background-color: green;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.2s ease;
 }
