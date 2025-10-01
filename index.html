@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MetaData</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -114,12 +115,18 @@
         </label>
 
         <button id="showExifBtn">Go for EXIF Remover</button>
-
-        <!-- Table container hidden by default -->
-    
       </div>
     </div>
+
+    <!-- exif container -->
     <div id="exifTableContainer" class="exif-table-box"></div>
+
+    <!-- map container -->
+    <div id="mapContainer" style="display: none; margin-top: 20px;">
+      <h3 style="text-align: center; margin-bottom: 15px;">Image Location Map</h3>
+      <div id="map" style="height: 400px; width: 100%; border: 1px solid #ddd; border-radius: 6px;"></div>
+      <div id="safetyInfo" style="margin-top: 10px; text-align: center;"></div>
+    </div>
   </main>
 
   <section class="exifdata-container">
@@ -168,6 +175,7 @@
     </div>
   </footer>
 
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/exif-js"></script>
   <script src="script.js"></script>
 </body>
