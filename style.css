@@ -613,3 +613,20 @@ main{
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: all 0.2s ease;
 }
+
+#mapContainer{
+    width: 100%;
+    max-width: 700px;
+    margin: 20px auto;
+    padding: 0 50PX;
+    box-sizing: border-box;
+}
+
+#map{
+    border-radius: 6px;
+}
+
+.safety-maker{
+    background: transparent !important;
+    border: none !important;
+}
